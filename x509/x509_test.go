@@ -19,7 +19,6 @@ import (
 	"encoding/hex"
 	"encoding/pem"
 	"fmt"
-	"internal/testenv"
 	"math/big"
 	"net"
 	"os/exec"
@@ -884,8 +883,6 @@ func TestParsePEMCRL(t *testing.T) {
 }
 
 func TestImports(t *testing.T) {
-	testenv.MustHaveGoRun(t)
-
 	if err := exec.Command("go", "run", "x509_test_import.go").Run(); err != nil {
 		t.Errorf("failed to run x509_test_import.go: %s", err)
 	}
